@@ -16,6 +16,8 @@
   https://www.dyn-web.com/tutorials/object-literal/properties.php
 
 Sample movies array, i.e. INPUT:
+*/
+const tab1 =
   [
     {
       name: 'Crazy Rich Asians',
@@ -35,6 +37,7 @@ Sample movies array, i.e. INPUT:
     }
   ]
 
+/*
 Expected OUTPUT for this sample:
   [
     {
@@ -61,8 +64,27 @@ Expected OUTPUT for this sample:
 
  */
 
-function getMoviesFreshness(movies) {
+function getMoviesFreshness(tab1) {
+  const newTab = tab1.map(line => {
+    if (line.rating < 60) {
+      let source = { label: 'rotten' };
+      const newObj = Object.assign(line, source);
+      return newObj;
+    } else if (line.rating >= 60 && line.rating <= 75) {
+      let source1 = { label: 'fresh' };
+      const newObj2 = Object.assign(line, source1);
+      return newObj2;
+    } else if (line.rating > 75) {
+      let source2 = { label: 'certified fresh' };
+      const newObj3 = Object.assign(line, source2);
+      return newObj3;
+    }
+  })
+  return newTab;
 }
+
+
+getMoviesFreshness(tab1);
 
 
 

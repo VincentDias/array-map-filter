@@ -9,13 +9,15 @@
   Then you only need to use this function with map.
 
 Sample INPUT array (strings) for getStringsLength:
+*/
+const tab =
   [
     'Chicken',
     'Bacon',
     'Tofu',
     'Mayonnaise'
-  ]
-
+  ];
+/*
 Expected OUTPUT for this sample array:
   [
     'Chicken contains 7 characters',
@@ -26,8 +28,17 @@ Expected OUTPUT for this sample array:
 
 */
 
-function getStringsLength(strings) {
+function getStringsLength(tab) {
+
+  const newTab = tab.map(x => x + " contains " + x.length + " characters");
+  return newTab;
+
+  // for (string of tab) {
+  //   console.log(`${string} contains ${string.length} characters`);
+  // }
 }
+getStringsLength(tab);
+
 
 // If you need, you can always visualize the result with a console.log.
 // In that case, uncomment the line below (you can also add your own

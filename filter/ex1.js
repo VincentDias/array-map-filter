@@ -6,16 +6,22 @@
 * Return the result of filter
 
 Sample numbers array, i.e. INPUT:
-  [7, -4, 2, 0, -10, 3, 11]
+*/
+const tab =
+  [7, -4, 2, 0, -10, 3, 11];
+/*
 
 Expected OUTPUT for this sample:
-  [7, 2, 0, 3, 11]
+[7, 2, 0, 3, 11]
 
 */
 
-function getPositiveNumbers(numbers) {
-}
+function getPositiveNumbers(tab) {
+  const newTab = tab.filter(element => element >= 0);
+  return newTab;
 
+}
+getPositiveNumbers(tab);
 // If you need, you can always visualize the result with a console.log.
 // In that case, uncomment the line below (you can also add your own
 // console.log INSIDE the function).

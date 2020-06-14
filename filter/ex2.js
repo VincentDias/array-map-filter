@@ -24,9 +24,29 @@ Expected OUTPUT for this sample:
   ['Bran Stark', 'Arya Stark', 'Sansa Stark']
 
 */
+const names = [
+  'Bran Stark',
+  'Cersei Lannister',
+  'Sandor Clegane',
+  'Arya Stark',
+  'Yara Greyjoy',
+  'Sansa Stark'
+];
 
+
+// function keepStarks(names, request) {
+//   const newTab = names.filter(names => names.toLowerCase().indexOf(request.toLowerCase()) !== -1);
+//   console.log(newTab);
+// }
+
+// keepStarks(names, "stark");
 function keepStarks(names) {
+  const newTab = names.filter(name => name.endsWith("Stark"));
+  return newTab;
 }
+
+keepStarks(names);
+
 
 // DON'T TOUCH THIS!
 module.exports = keepStarks;

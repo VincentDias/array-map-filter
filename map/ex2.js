@@ -13,6 +13,8 @@
     (replace FOOD with the `food` attribute)
 
 Sample foods array, i.e. INPUT:
+*/
+const tab =
   [
     {
       food: 'Bacon',
@@ -31,19 +33,43 @@ Sample foods array, i.e. INPUT:
       isVegetarian: true
     }
   ]
+/*
 
 Expected OUTPUT for this sample
-  [
-    'Bacon is not suitable for vegetarians',
-    'Sausage is not suitable for vegetarians',
-    'Tofu is suitable for vegetarians',
-    'Chick Pea is suitable for vegetarians'
-  ]
+[
+  'Bacon is not suitable for vegetarians',
+  'Sausage is not suitable for vegetarians',
+  'Tofu is suitable for vegetarians',
+  'Chick Pea is suitable for vegetarians'
+]
 
 */
 
 function getFoodCategories(foods) {
+  //for (food of foods) {
+  const newTab = foods.map(food => {
+    if (food.isVegetarian === true) {
+      return food.food + " is suitable for vegetarians";
+    } else {
+      return food.food + " is not suitable for vegetarians";
+    }
+  })
+  return newTab;
 }
+
+
+
+
+
+// for (food of foods) {
+//   if (food.isVegetarian === true) {
+//     console.log(food.food + " is suitable for vegans");
+//   } else {
+//     console.log(food.food + " is not suitable for vegans");
+//   }
+// }
+
+getFoodCategories(tab);
 
 
 

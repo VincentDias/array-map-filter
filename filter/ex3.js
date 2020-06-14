@@ -16,24 +16,32 @@ solve if you write the function you give to filter OUTSIDE filterOnPrice.
 
 Sample arguments, i.e. INPUTS:
   1. array of products:
-      [
-        { name: 'iPhone X', price: 1159 },
-        { name: 'Xiaomi Mi A2', price: 209 },
-        { name: 'Samsung Galaxy Note 9', price: 992 },
-        { name: 'Huawei P20', price: 480 },
-        { name: 'Huawei P20 Pro', price: 649 }
-      ]
-  2. maximum price: 500
-
-Expected OUTPUT for these sample arguments:
+  */
+const products =
   [
+    { name: 'iPhone X', price: 1159 },
     { name: 'Xiaomi Mi A2', price: 209 },
-    { name: 'Huawei P20', price: 480 }
+    { name: 'Samsung Galaxy Note 9', price: 992 },
+    { name: 'Huawei P20', price: 480 },
+    { name: 'Huawei P20 Pro', price: 649 }
   ]
+
+/*
+2. maximum price: 500
+ 
+Expected OUTPUT for these sample arguments:
+[
+{ name: 'Xiaomi Mi A2', price: 209 },
+{ name: 'Huawei P20', price: 480 }
+]
 */
 
 function filterOnPrice(products, maxPrice) {
+  const newTab = products.filter(product => product.price <= maxPrice);
+  return newTab;
 }
+
+filterOnPrice(products, 500);
 
 // DON'T TOUCH THIS!
 module.exports = filterOnPrice;
